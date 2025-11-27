@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Categories - ClearMint Ledger</title>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body>
+  <nav class="navbar">
+    <div class="brand">ClearMint Ledger</div>
+    <div class="nav-links">
+      <a href="dashboard.html">Dashboard</a>
+      <a href="transactions.html">Transactions</a>
+      <a href="categories.html">Categories</a>
+      <a href="reports.html">Reports</a>
+      <a href="settings.html">Settings</a>
+    </div>
+  </nav>
+  <div class="container">
+    <div class="grid two">
+      <form id="category-form" class="card">
+        <div class="section-title"><h2>Add category</h2></div>
+        <div>
+          <label>Name</label>
+          <input type="text" name="name" required>
+        </div>
+        <div style="margin-top:8px;">
+          <label>Color hex</label>
+          <input type="text" name="color" placeholder="#7bcfa7" required>
+        </div>
+        <div style="margin-top:12px; text-align:right;">
+          <button class="btn" type="submit">Save</button>
+        </div>
+      </form>
+      <div class="card">
+        <div class="section-title"><h2>Manage categories</h2></div>
+        <div id="category-list" class="grid" style="gap:12px;"></div>
+      </div>
+    </div>
+  </div>
+  <script src="api.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>

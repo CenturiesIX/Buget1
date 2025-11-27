@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Reports - ClearMint Ledger</title>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+  <nav class="navbar">
+    <div class="brand">ClearMint Ledger</div>
+    <div class="nav-links">
+      <a href="dashboard.html">Dashboard</a>
+      <a href="transactions.html">Transactions</a>
+      <a href="categories.html">Categories</a>
+      <a href="reports.html">Reports</a>
+      <a href="settings.html">Settings</a>
+    </div>
+  </nav>
+  <div class="container">
+    <div class="card">
+      <div class="section-title">
+        <h2>Monthly report</h2>
+        <button class="btn secondary" id="export-report">Export JSON</button>
+      </div>
+      <div class="filters">
+        <div>
+          <label>Month</label>
+          <select id="report-month"></select>
+        </div>
+        <div>
+          <label>Year</label>
+          <select id="report-year"></select>
+        </div>
+      </div>
+      <div class="grid two" style="margin-top:12px;">
+        <div class="card">
+          <small>Total expenses</small>
+          <div class="value" id="monthly-total">$0</div>
+        </div>
+        <div class="card">
+          <small>Category breakdown</small>
+          <div class="chart-box"><canvas id="report-category"></canvas></div>
+        </div>
+      </div>
+      <div class="card" style="margin-top:12px;">
+        <small>Daily trend</small>
+        <div class="chart-box"><canvas id="report-daily"></canvas></div>
+      </div>
+    </div>
+
+    <div class="card" style="margin-top:16px;">
+      <div class="section-title">
+        <h2>Yearly report</h2>
+      </div>
+      <div class="filters">
+        <div>
+          <label>Year</label>
+          <select id="report-yearly-select"></select>
+        </div>
+      </div>
+      <div class="grid two" style="margin-top:12px;">
+        <div class="card">
+          <small>Total expenses</small>
+          <div class="value" id="yearly-total">$0</div>
+        </div>
+        <div class="card">
+          <small>Monthly totals</small>
+          <div class="chart-box"><canvas id="report-yearly-chart"></canvas></div>
+        </div>
+      </div>
+      <div class="card" style="margin-top:12px;">
+        <small>Category split</small>
+        <div class="chart-box"><canvas id="report-yearly-category"></canvas></div>
+      </div>
+    </div>
+  </div>
+  <script src="api.js"></script>
+  <script src="charts.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>

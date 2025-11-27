@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Settings - ClearMint Ledger</title>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body>
+  <nav class="navbar">
+    <div class="brand">ClearMint Ledger</div>
+    <div class="nav-links">
+      <a href="dashboard.html">Dashboard</a>
+      <a href="transactions.html">Transactions</a>
+      <a href="categories.html">Categories</a>
+      <a href="reports.html">Reports</a>
+      <a href="settings.html">Settings</a>
+    </div>
+  </nav>
+  <div class="container">
+    <div class="card">
+      <div class="section-title"><h2>Preferences</h2></div>
+      <form id="settings-form" class="grid two">
+        <div>
+          <label>Currency symbol</label>
+          <input type="text" name="currency" maxlength="3" data-bind="currency" required>
+        </div>
+        <div class="flex" style="margin-top:20px;">
+          <input type="checkbox" id="animations" name="animations" data-bind="animations">
+          <label for="animations">Enable animations</label>
+        </div>
+        <div style="grid-column: 1 / -1; text-align:right;">
+          <button class="btn" type="submit">Save settings</button>
+        </div>
+      </form>
+    </div>
+
+    <div class="grid two" style="margin-top:16px;">
+      <div class="card">
+        <div class="section-title"><h2>Backup</h2></div>
+        <div class="flex" style="justify-content: space-between;">
+          <button class="btn secondary" id="download-backup">Download backup</button>
+          <input type="file" id="import-backup" accept="application/json">
+        </div>
+      </div>
+      <div class="card">
+        <div class="section-title"><h2>Reset</h2></div>
+        <p>Remove all data and restore defaults. This cannot be undone.</p>
+        <button class="btn danger" id="reset-data">Reset all data</button>
+      </div>
+    </div>
+  </div>
+  <script src="api.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>

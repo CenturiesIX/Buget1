@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dashboard - ClearMint Ledger</title>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+  <nav class="navbar">
+    <div class="brand">ClearMint Ledger</div>
+    <div class="nav-links">
+      <a href="dashboard.html">Dashboard</a>
+      <a href="transactions.html">Transactions</a>
+      <a href="categories.html">Categories</a>
+      <a href="reports.html">Reports</a>
+      <a href="settings.html">Settings</a>
+    </div>
+  </nav>
+  <div class="container">
+    <div class="grid two">
+      <div class="card">
+        <div class="stat">
+          <div>
+            <small>Income (current month)</small>
+            <div class="value" id="summary-income">$0</div>
+          </div>
+          <span class="badge income">Inflow</span>
+        </div>
+      </div>
+      <div class="card">
+        <div class="stat">
+          <div>
+            <small>Expenses (current month)</small>
+            <div class="value" id="summary-expense">$0</div>
+          </div>
+          <span class="badge expense">Outflow</span>
+        </div>
+      </div>
+      <div class="card">
+        <div class="stat">
+          <div>
+            <small>Net balance</small>
+            <div class="value" id="summary-net">$0</div>
+          </div>
+          <span class="chip">Net</span>
+        </div>
+      </div>
+      <div class="card">
+        <div class="stat">
+          <div>
+            <small>Highest expense</small>
+            <div class="value" id="summary-highest">$0</div>
+          </div>
+          <span class="chip">Peak</span>
+        </div>
+      </div>
+      <div class="card">
+        <div class="stat">
+          <div>
+            <small>Most used category</small>
+            <div class="value" id="summary-category">—</div>
+          </div>
+          <span class="chip">Focus</span>
+        </div>
+      </div>
+      <div class="card">
+        <div class="stat">
+          <div>
+            <small>Average daily spending</small>
+            <div class="value" id="summary-average">$0</div>
+          </div>
+          <span class="chip">Average</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="grid two" style="margin-top:16px;">
+      <div class="card">
+        <div class="section-title">
+          <h2>Category spending</h2>
+        </div>
+        <div class="chart-box">
+          <canvas id="category-pie"></canvas>
+        </div>
+      </div>
+      <div class="card">
+        <div class="section-title">
+          <h2>Daily totals</h2>
+        </div>
+        <div class="chart-box">
+          <canvas id="daily-bar"></canvas>
+        </div>
+      </div>
+    </div>
+  </div>
+  <script src="api.js"></script>
+  <script src="charts.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
